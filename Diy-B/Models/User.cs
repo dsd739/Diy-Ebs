@@ -20,21 +20,6 @@ namespace Diy_B.Models
         public ICollection<UserActivity> UserActivities { get; set; } = new List<UserActivity>();
     }
 
-    public class Claim
-    {
-        public Guid ClaimId { get; set; }
-        public Guid UserId { get; set; }
-        public DateTime ClaimDate { get; set; }
-        public decimal ClaimAmount { get; set; }
-        public string ClaimReason { get; set; } = string.Empty;
-        public string Status { get; set; } = string.Empty;
-        public Guid? AdminId { get; set; }
-        public string? RejectionReason { get; set; }
-
-        public User User { get; set; } = null!;
-        public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
-    }
-
     public class Master
     {
         public Guid MasterId { get; set; }

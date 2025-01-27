@@ -34,5 +34,10 @@ namespace Diy_B.Services
 		{
 			return HashPassword(password) == passwordHash;
 		}
-	}
+
+        internal async Task RegisterUserAsync(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
