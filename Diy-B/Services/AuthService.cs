@@ -15,10 +15,10 @@ namespace Diy_B.Services
 			_context = context;
 		}
 
-		public async Task<User?> AuthenticateAsync(string username, string password)
+		public async Task<users?> AuthenticateAsync(Guid username, string password)
 		{
-			var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
-			if (user == null || !VerifyPassword(password, user.PasswordHash))
+			var user = await _context.users.FirstOrDefaultAsync(u => u.user_id == username);
+			if (user == null || !VerifyPassword(password, user.password))
 				return null;
 
 			return user;
@@ -32,12 +32,9 @@ namespace Diy_B.Services
 
 		private static bool VerifyPassword(string password, string passwordHash)
 		{
-			return HashPassword(password) == passwordHash;
-		}
 
-        internal async Task RegisterUserAsync(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
+            return password== passwordHash;
+
+        
     }
 }
