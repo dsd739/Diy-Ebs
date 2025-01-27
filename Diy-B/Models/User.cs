@@ -17,6 +17,7 @@ namespace Diy_B.Models
 
     }
 
+
     public class Claim
     {
         public Guid ClaimId { get; set; }

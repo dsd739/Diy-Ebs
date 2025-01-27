@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Diy_B.Controllers
 {
@@ -37,6 +40,7 @@ namespace Diy_B.Controllers
 			return Ok(new { Token = token });
 		}
 	}
+
 	public class LoginRequest
 	{
 		public Guid Username { get; set; }

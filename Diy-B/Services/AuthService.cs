@@ -32,9 +32,9 @@ namespace Diy_B.Services
 
 		private static bool VerifyPassword(string password, string passwordHash)
 		{
-            //return HashPassword(password) == passwordHash;
 
             return password== passwordHash;
-        }
+
+        
     }
 }
