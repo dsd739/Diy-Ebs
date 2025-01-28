@@ -16,12 +16,12 @@ public class ClaimService : IClaimService
     {
         var claim = new Claim
         {
-            ClaimId = Guid.NewGuid(),
+            
             UserId = request.UserId,
             ClaimDate = request.ClaimDate,
             ClaimAmount = request.ClaimAmount,
             ClaimReason = request.ClaimReason,
-            Status = "Pending Approval"
+            
         };
 
         _context.Claims.Add(claim);

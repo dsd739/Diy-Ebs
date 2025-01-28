@@ -10,10 +10,11 @@ namespace Diy_B.Models
         [Key]
         public Guid ClaimId { get; set; }
 
+        [ForeignKey("user_id")]
         [Required]
         public Guid UserId { get; set; }
 
-        [Required]
+       
         public DateTime ClaimDate { get; set; }
 
         [Required]
@@ -24,19 +25,13 @@ namespace Diy_B.Models
         [MaxLength(500)]
         public string ClaimReason { get; set; } = string.Empty;
 
-        [Required]
-        [MaxLength(50)]
-        public string Status { get; set; } = string.Empty;
+       
 
-        public Guid? AdminId { get; set; }
 
-        [MaxLength(500)]
-        public string? RejectionReason { get; set; }
+        
+        
+        
 
-        // Navigation Properties
-        [ForeignKey("UserId")]
-        public User User { get; set; } = null!;
-
-        public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+     
     }
 }

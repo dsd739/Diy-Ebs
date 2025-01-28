@@ -15,9 +15,9 @@ namespace Diy_B.Services
 			_context = context;
 		}
 
-		public async Task<User?> AuthenticateAsync(string username, string password)
+		public async Task<User?> AuthenticateAsync(string Username, string password)
 		{
-			var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+			var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == Username);
 			if (user == null || !VerifyPassword(password, user.PasswordHash))
 				return null;
 
